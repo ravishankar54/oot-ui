@@ -1,0 +1,25 @@
+﻿<section id="about" class="one dark cover">
+    <div class="container">
+
+        <header>
+            <h2>Survey</h2>
+        </header>
+
+        <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+
+        <p>
+            Please share your experience
+        </p>
+        <div class="row">
+            <div class="6u 12u$(mobile)">
+                <span ng-repeat="category in categories">
+                    {{category.Name}}
+                    <div star-rating rating-value="current" max="max" category="category.ID" on-rating-selected="getSelectedRating(rating,category)"></div>
+                </span>
+            </div>
+            <div class="6u 12u$(mobile)">
+                <button id="btnSubmit" type="submit" class="btn btn-primary" ng-click="Submit()">Submit</button>
+            </div>
+        </div>
+    </div>
+</section>

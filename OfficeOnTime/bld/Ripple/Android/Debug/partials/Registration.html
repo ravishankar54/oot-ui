@@ -1,0 +1,44 @@
+﻿
+<section class="one dark cover">
+    <div class="container">
+        <header>
+            <h2>Account details</h2>
+        </header>
+        <form name="regForm">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="inputfname" minlength="3" ng-model="User.Name" placeholder="First Name" required only-alphabets />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="inputempid" ng-model="User.ID" ng-readonly="{{User.ID!=null}}" placeholder="Emp Id" required maxlength="4" only-numbers />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="email" class="form-control" id="inputemail" ng-model="User.Email" placeholder="Email Address" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="inputmobile" ng-model="User.Mobile" placeholder="Mobile Number" maxlength="10" minlength="10" required only-numbers />
+                </div>
+            </div>
+
+            <div class="input-group panel-group">
+                <input type="text" class="form-control" id="inputLocation" ng-model="User.CheckInLocation" placeholder="Pick up location&hellip;" disabled="disabled" />
+                <span class="input-group-addon">
+                    <i class="fa fa-map-marker" ng-click="getLocation()"></i>
+                </span>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary" ng-click="Register()">{{ SubmitText }}</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>

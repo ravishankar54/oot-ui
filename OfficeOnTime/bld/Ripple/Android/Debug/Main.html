@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html ng-app="ootApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />    
+    <title>Home</title>
+    <base href="/">
+    <!--<link href="css/overrides.css" rel="stylesheet" />-->    
+    <link href="scripts/frameworks/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+    <!-- Animation and jquery references-->
+    <script src="scripts/frameworks/jquery/jquery.min.js"></script>    
+    <script src="scripts/frameworks/bootstrap-3.3.5/js/bootstrap.min.js"></script>   
+    <script src="js/skel.min.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+    <!--<script src="scripts/index.js"></script>
+    <script src="scripts/vhsupport.js"></script>-->
+
+    <!-- angularapp references -->
+    <script src="scripts/frameworks/angular/angular.min.js"></script>
+    <script src="scripts/frameworks/angular/angular-resource.min.js"></script>
+    <script src="scripts/frameworks/angular/angular-route.min.js"></script>
+
+    <!-- project core and controllers-->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/Directives/starRating.js"></script>
+    <script src="scripts/Directives/onlyNumbers.js"></script>
+    <script src="scripts/Directives/onlyAlphabets.js"></script>
+    
+    <script src="scripts/Controllers/homeController.js"></script>
+    <script src="scripts/Controllers/registrationController.js"></script>
+    <script src="scripts/Controllers/contactController.js"></script>
+    <script src="scripts/Controllers/feedbackController.js"></script>
+
+    <!-- angular custom factories -->
+    <script src="scripts/Factories/cordovaReadyFactory.js"></script>
+    <script src="scripts/Factories/geoLocationFactory.js"></script>
+    <script src="scripts/Factories/notificationFactory.js"></script>
+    <script src="scripts/Factories/spinnerDialogFactory.js"></script>    
+
+    <!-- office-on-time services-->
+    <script src="scripts/Services/categoryService.js"></script>
+    <script src="scripts/Services/registrationService.js"></script>
+    <script src="scripts/Services/dbService.js"></script>
+
+</head>
+<body>
+    <div ng-controller="HomeCtrl" ng-init="initController()">
+        <div id="header">
+            <div class="top">
+                <div id="logo">
+                    <span class="image avatar48"> <img src="images/avatar.jpg" alt="avatar" /></span>
+                    <h1 id="title">Office on time</h1>
+                    <p>Employee friendly</p>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a ng-href="/Home" id="top-link" class="skel-layers-ignoreHref" ng-click="go('/Home')"><span class="icon fa-home">Home</span></a></li>
+                        <li><a ng-href="/Register" id="register-link" class="skel-layers-ignoreHref" ng-click="go('/Register')"><span class="icon fa-user">Account</span></a></li>
+                        <li><a ng-href="/Survey" id="about-link" class="skel-layers-ignoreHref" ng-click="go('/Survey')"><span class="icon fa-th">Feedback</span></a></li>
+                        <li><a ng-href="/Contact" id="contact-link" class="skel-layers-ignoreHref" ng-click="go('/Contact')"><span class="icon fa-envelope">Contact</span></a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="bottom">
+                <!-- Social Icons -->
+                <!--<ul class="icons">
+                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+                    <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+                    <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+                </ul>-->
+
+            </div>
+        </div>
+        <div id="main" ng-view>
+
+        </div>
+    </div>
+</body>
+</html>
