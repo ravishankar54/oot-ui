@@ -1,9 +1,11 @@
 ﻿'use strict';
-ootApp.controller('FeedbackCtrl', ['$scope', '$rootScope', 'categoryService', 'Notification', 'SpinnerDialog',
-        function ($scope, $rootScope, categoryService, Notification, SpinnerDialog) {
+ootApp.controller('FeedbackCtrl', ['$scope', '$rootScope', 'Notification', 'SpinnerDialog', 'feedbackService',
+        function ($scope, $rootScope, Notification, SpinnerDialog, feedbackService) {
+
+            $scope.Comment = "";
 
             $scope.getCategoriesFromService = function () {
-                categoryService.getCategories().then(function (dataResponse) {
+                feedbackService.getCategories().then(function (dataResponse) {
                     SpinnerDialog.show();
                     $scope.categories = dataResponse.data;
                     SpinnerDialog.hide();
@@ -43,12 +45,20 @@ ootApp.controller('FeedbackCtrl', ['$scope', '$rootScope', 'categoryService', 'N
 
             $scope.Submit = function () {
                 SpinnerDialog.show();
-                categoryService.submitSurvey(JSON.stringify($scope.surveyList)).then(function (response) {
-                    SpinnerDialog.hide();
+               
+                feedbackService.submitSurvey(JSON.stringify($scope.surveyList)).then(function (response) {
                     Notification.alert('Feedback submitted successfully', function () { }, 'Info', 'OK');
                 }, function (error) {
-                    SpinnerDialog.hide();
                     Notification.alert(error.data.Message, function () { }, 'Info', 'OK');
                 })
+                $scope.surveyComment = {};
+                $scope.surveyComment["EmployeeID"] = $rootScope.userFromStorage.item(0).ID;
+                $scope.surveyComment["Comment"] = $scope.Comment;
+                feedbackService.submitComment($scope.surveyComment).then(function (response) {
+                    Notification.alert('Feedback submitted successfully', function () { }, 'Info', 'OK');
+                }, function (error) {
+                    Notification.alert(error.data.Message, function () { }, 'Info', 'OK');
+                })
+                SpinnerDialog.hide();
             };
         }]);

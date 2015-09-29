@@ -262,6 +262,7 @@
     <Content Include="scripts\Factories\getCurrentAccelerationFactory.js" />
     <Content Include="scripts\Services\categoryService.js" />
     <Content Include="scripts\Services\dbService.js" />
+    <Content Include="scripts\Services\feedbackService.js" />
     <Content Include="scripts\Services\registrationService.js" />
     <Content Include="scripts\vhsupport.js" />
     <Content Include="merges\android\scripts\android2.3-jscompat.js" />
