@@ -2,7 +2,7 @@
 var ootApp = angular.module('ootApp', [
       'ngRoute'
 ]).run(function ($rootScope) {
-    $rootScope.url = 'http://localhost:20911/';
+    $rootScope.url = 'http://localhost:8080/';
     $rootScope.userLocallyAvailable = false;
 });
 

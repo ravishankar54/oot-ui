@@ -234,6 +234,7 @@
     <Content Include="scripts\Controllers\feedbackController.js" />
     <Content Include="scripts\Controllers\homeController.js" />
     <Content Include="scripts\Controllers\registrationController.js" />
+    <Content Include="scripts\Directives\maxCharacters.js" />
     <Content Include="scripts\Directives\onlyAlphabets.js" />
     <Content Include="scripts\Directives\onlyNumbers.js" />
     <Content Include="scripts\Directives\starRating.js" />
